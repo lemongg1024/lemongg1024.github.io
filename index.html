@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>北上广深三甲医院名单查询</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="external nofollow" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="external nofollow" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        .navbar-collapse {
+            padding: 0;
+        }
+        .alert {
+            margin: 20px;
+        }
+        .input-group select.form-control:last-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            margin-right: -1px;
+        }
+        .tab-content{
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>&nbsp;</p>
+    <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul id="myTabs" class="nav navbar-nav nav-pills" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#first" rel="external nofollow" role="tab" id="first-tab" data-toggle="tab" aria-controls="first" aria-expanded="true">上海</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#second" rel="external nofollow" role="tab" id="second-tab" data-toggle="tab" aria-controls="second" aria-expanded="false">广州</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#third" rel="external nofollow" role="tab" id="third-tab" data-toggle="tab" aria-controls="third" aria-expanded="false">北京</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#fouth" rel="external nofollow" role="tab" id="fouth-tab" data-toggle="tab" aria-controls="fouth" aria-expanded="false">深圳</a>
+                </li>
+                <li role="presentation" class="hidden">
+                    <a href="#search" rel="external nofollow" role="tab" id="search-tab" data-toggle="tab" aria-controls="search" aria-expanded="false">搜索结果tab隐藏</a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <select class="form-control" id="searchSelect">
+                                <option value="all" selected="selected">全部</option>
+                                <option value="name">三甲医院名称</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchText" class="form-control" placeholder="搜索内容">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default" id="searchBth">搜索</button>
+            </form>
+        </div>
+        <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="first" aria-labelledby="first-tab">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>三甲医院名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>第二军医大学第二附属医院</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>第二军医大学第一附属医院</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>第二军医大学附属东方肝胆外科医院</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>复旦大学附属儿科医院</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>复旦大学附属妇产科医院</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>复旦大学附属华山医院</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>复旦大学附属金山医院</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>复旦大学附属眼耳鼻喉科医院</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>复旦大学附属中山医院</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>复旦大学附属肿瘤医院</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>华东医院</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>上海交通大学医学院附属第九人民医院</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>上海交通大学医学院附属第三人民医院</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>上海交通大学医学院附属仁济医院</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>上海交通大学医学院附属瑞金医院</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>上海交通大学医学院附属上海儿童医学中心</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>上海交通大学医学院附属新华医院</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>上海市第六人民医院</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>上海市第十人民医院</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>上海市第五人民医院</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>上海市第一妇婴保健院</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>上海市第一人民医院</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>上海市东方医院</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>上海市儿童医院</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>上海市肺科医院</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>上海市公共卫生临床中心</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>上海市精神卫生中心</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>上海市普陀区中心医院</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>上海市同济医院</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>上海市胸科医院</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>上海市杨浦区中心医院</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>上海市中医医院</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>上海中医药大学附属龙华医院</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>上海中医药大学附属曙光医院</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>上海中医药大学附属岳阳中西医结合医院</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>中国福利会国际和平妇幼保健院</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="second" aria-labelledby="second-tab">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>三甲医院名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>广东省人民医院</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="third" aria-labelledby="third-tab">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>三甲医院名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>北京大学人民医院</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="fouth" aria-labelledby="fouth-tab">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>三甲医院名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>深圳市人民医院</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 显示搜索结果框架 -->
+            <div role="searchTable" class="tab-pane fade" id="search" aria-labelledby="search-tab">
+                <h3>搜索结果</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>三甲医院名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p><em>手工制作，仅供参考。</em></p>
+</div>
+<script>
+    $('#myTabs a').click(function(e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    $('#searchText').change(function() {
+        console.log("dd");
+        var searchText = $(this).val();
+        var searchSelect = $('#searchSelect').val();
+        var $searchTr = "";
+        if(searchText != "") {
+            $('#search tbody').html("");
+            //筛选搜索
+            if(searchSelect == "name") {
+                $searchTr = $('#myTabContent').find('td:nth-child(2):contains(' + searchText + ')').parent();
+            } else if(searchSelect == "position") {
+                $searchTr = $('#myTabContent').find('td:nth-child(3):contains(' + searchText + ')').parent();
+            } else if(searchSelect == "about") {
+                $searchTr = $('#myTabContent').find('td:nth-child(6):contains(' + searchText + ')').parent();
+            } else {
+                $searchTr = $('#myTabContent').find('td:contains(' + searchText + ')').parent();
+            }
+            $searchTr.each(function(i, e) {
+                $('#search tbody').append($(e).clone(true));
+            });
+            //如果没有搜索结果 显示一个报错div
+            if($searchTr.length <= 0) {
+                $('#search tbody').html('<td colspan = "7"><div class="alert alert-warning" role="alert">没有内容</div></td>')
+            }
+            $('#search-tab').tab('show');
+        }
+    }).keyup(function() {
+        $(this).change();
+    })
+    $('#searchBth').click(function() {
+        $('#searchText').change();
+    })
+</script>
+</body>
+</html>
